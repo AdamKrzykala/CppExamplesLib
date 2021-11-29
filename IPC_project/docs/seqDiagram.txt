@@ -1,0 +1,14 @@
+title Queue reader/writer
+
+Main->myQueue:Creating instance of shared queue
+
+Main->WriterThread:Create thread to read sentences from text and put them into myQueue
+Main->ReaderThread:Create thread to read sentences from queue and print them on the screen
+
+
+myQueue<-WriterThread:Add sentence to the myQueue
+myQueue->WriterThread:Sentence added or not
+myQueue<-ReaderThread:Get sentence from the myQueue when user chooses 'Q'
+myQueue->ReaderThread:Sentence
+Main<-WriterThread:Finish when input buffer is empty or user chooses 'X' option
+Main<-ReaderThread:Finish when user chooses 'X' option
